@@ -387,7 +387,7 @@ body.quake main, body.quake #bg, body.quake #hud { animation: quake .5s linear b
   translate: 0 0;
   filter: drop-shadow(-15px 13px 0 var(--forest));
 }
-.splash-card h1 { left: 3vw; bottom: 8%; z-index: 8; max-width: 6ch; font-size: clamp(70px, 10vw, 158px); line-height: .72; }
+.splash-card h1 { left: 4vw; top: 14%; bottom: auto; z-index: 8; max-width: 6ch; font-size: clamp(90px, 12.5vw, 190px); line-height: .7; }
 .splash-card .word-1 { right: 7%; top: 13%; }
 .splash-card .word-2 { right: 3%; top: 47%; }
 .splash-card .word-3 { right: 5%; top: 72%; font-size: clamp(28px, 4vw, 66px); }
@@ -544,7 +544,7 @@ body.rage-mode .chaos-card { box-shadow: 13px 13px 0 var(--ink); }
   .splash-cat-cluster img:nth-child(3) { right: 5%; bottom: 4%; }
   .splash-cat-cluster img:nth-child(4) { right: -20%; }
   .splash-card > .splash-mega-cat { right: -20vw; top: 11%; width: 96vw; height: 78%; opacity: .96; }
-  .splash-card h1 { left: 4vw; bottom: 8%; z-index: 8; max-width: 5ch; font-size: clamp(52px, 17vw, 82px); }
+  .splash-card h1 { left: 4vw; top: 14%; bottom: auto; z-index: 8; max-width: 5ch; font-size: clamp(68px, 20vw, 96px); }
   .splash-ui .hot-btn { min-width: 0; width: 100%; }
   #head h1 { font-size: clamp(72px, 22vw, 110px); }
   .hero-cat-pack { right: -12%; bottom: 0; width: 92%; height: 45%; }
