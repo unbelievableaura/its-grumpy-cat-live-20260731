@@ -395,20 +395,7 @@ body.quake main, body.quake #bg, body.quake #hud { animation: quake .5s linear b
 .splash-ui .hot-btn { background: var(--yellow); min-width: 330px; }
 
 /* Two-section chaos edition */
-#head h1 { font-size: clamp(150px, 27vw, 390px); line-height: .67; }
-.hero-stamps { position: absolute; right: 5%; top: 12%; width: 34%; height: 58%; pointer-events: none; }
-.hero-stamps b {
-  position: absolute;
-  display: block;
-  padding: 8px 13px;
-  border: 5px solid var(--ink);
-  background: var(--yellow);
-  box-shadow: 7px 7px 0 var(--green);
-  font: 900 clamp(28px, 5vw, 70px)/1 var(--disp);
-}
-.hero-stamps b:nth-child(1) { right: 4%; top: 2%; rotate: 10deg; }
-.hero-stamps b:nth-child(2) { left: 0; top: 39%; rotate: -13deg; background: var(--white); }
-.hero-stamps b:nth-child(3) { right: 0; bottom: 0; rotate: 7deg; background: var(--green); }
+#head h1 { max-width: 6ch; font-size: clamp(92px, 14vw, 210px); line-height: .7; }
 .hero-cat-pack { position: absolute; right: -3%; bottom: 0; z-index: 1; width: 69%; height: 68%; pointer-events: none; }
 .hero-cat-pack img { position: absolute; bottom: -5%; width: 50%; filter: drop-shadow(8px 8px 0 var(--green)); }
 .hero-cat-pack img:nth-child(1) { left: 0; rotate: -8deg; }
@@ -559,9 +546,7 @@ body.rage-mode .chaos-card { box-shadow: 13px 13px 0 var(--ink); }
   .splash-card > .splash-mega-cat { right: -20vw; top: 11%; width: 96vw; height: 78%; opacity: .96; }
   .splash-card h1 { left: 4vw; bottom: 8%; z-index: 8; max-width: 5ch; font-size: clamp(52px, 17vw, 82px); }
   .splash-ui .hot-btn { min-width: 0; width: 100%; }
-  #head h1 { font-size: clamp(150px, 51vw, 210px); }
-  .hero-stamps { right: -3%; top: 21%; width: 48%; height: 50%; }
-  .hero-stamps b { border-width: 3px; padding: 5px 8px; font-size: clamp(22px, 8vw, 38px); box-shadow: 4px 4px 0 var(--green); }
+  #head h1 { font-size: clamp(72px, 22vw, 110px); }
   .hero-cat-pack { right: -12%; bottom: 0; width: 92%; height: 45%; }
   .hero-cat-pack img { width: 50%; }
   .hero-cat-pack img:nth-child(2) { left: 25%; width: 55%; }
