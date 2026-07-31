@@ -77,11 +77,11 @@
     setTimeout(() => document.body.classList.remove("quake"), 520);
   }
 
-  const cameoWords = ["NO", "UGH", "WHY", "LEAVE", "MONDAY", "STILL NO", "0/10", "NAP TIME"];
+  const cameoWords = ["NO", "UGH", "WHY", "LEAVE", "MONDAY 2", "STILL NO", "0/10", "NAP COURT", "JOY CRIME", "BOWL EMPTY", "YOU AGAIN?"];
   const shadows = ["#ffe600", "#f7ff75", "#00d95f", "#b9ff00"];
 
   function flashCat(options = {}) {
-    if (reducedMotion || flashLayer.childElementCount > 4) return;
+    if (reducedMotion || flashLayer.childElementCount > 8) return;
     const cat = document.createElement("div");
     cat.className = "flash-cat";
     const x = options.x ?? 10 + Math.random() * 80;
@@ -101,8 +101,9 @@
     if (reducedMotion) return;
     cameoTimer = setTimeout(() => {
       flashCat();
+      if (Math.random() > .56) setTimeout(() => flashCat(), 120);
       scheduleCameo();
-    }, 900 + Math.random() * 1300);
+    }, 430 + Math.random() * 780);
   }
 
   function enter(muted) {
@@ -112,7 +113,9 @@
     setTimeout(() => splash.remove(), 560);
     startAudio(muted);
     quake();
-    setTimeout(() => flashCat({ x: 76, y: 34, size: 360, word: "NO" }), 220);
+    setTimeout(() => flashCat({ x: 76, y: 34, size: 360, word: "NO" }), 120);
+    setTimeout(() => flashCat({ x: 20, y: 70, size: 240, word: "BAD ENTRY" }), 360);
+    setTimeout(() => flashCat({ x: 52, y: 22, size: 190, word: "WHY" }), 610);
     scheduleCameo();
   }
 
@@ -154,7 +157,7 @@
     joy: [$("#u-joy"), $("#m-joy")]
   };
   const miniStats = $("#ministats");
-  const howGrumpy = $("#howgrumpy");
+  const chaosSection = $("#chaos");
   const hud = $("#hud-len");
   const startTime = performance.now();
   let odometer = 0;
@@ -172,7 +175,7 @@
     update(units.mondays, (odometer / 1760).toFixed(1));
     update(units.naps, format((time - startTime) / 700));
     update(units.joy, `${Math.max(0.1, 100 - (time - startTime) / 3900 - odometer * 0.00045).toFixed(1)}%`);
-    miniStats.classList.toggle("on", y > howGrumpy.offsetTop - innerHeight * 0.25);
+    miniStats.classList.toggle("on", y > chaosSection.offsetTop - innerHeight * 0.15);
 
     if (analyser && !track.muted) {
       analyser.getByteFrequencyData(frequencyData);
@@ -230,7 +233,7 @@
     "Absolutely not. Remove the absolutely if you need brevity.",
     "I dislike this question and several nearby questions."
   ];
-  const thoughts = ["this green is suspicious", "the cursor is too cheerful", "somebody moved the blanket", "the bowl has visible bottom", "you are still here", "tomorrow is probably monday"];
+  const thoughts = ["this green is suspicious", "the cursor has bad energy", "somebody moved the blanket", "the bowl has visible bottom", "you are still here", "tomorrow is monday twice", "your appeal font is ugly"];
   let verdictIndex = 0;
 
   $("#ask").addEventListener("click", () => {
@@ -248,7 +251,32 @@
     flashCat({ x: 50, y: 48, size: 430, word: "HISSSSS" });
     grumble(1.6);
     quake();
-    setTimeout(() => { petButton.textContent = "PET THE CAT"; }, 1700);
+    setTimeout(() => { petButton.textContent = "PET HER ANYWAY"; }, 1700);
+  });
+
+  let rageCount = 0;
+  let rageTimer = null;
+  const rageNames = ["NORMAL AWFUL", "SPICY DISPLEASURE", "MONDAY PREMIUM", "BOWL COURT", "MAXIMUM NO", "LEGALIZE NAPS"];
+  $("#make-worse").addEventListener("click", () => {
+    rageCount += 1;
+    document.body.classList.add("rage-mode");
+    $("#rage-level").textContent = rageNames[Math.min(rageCount, rageNames.length - 1)];
+    $("#make-worse").textContent = rageCount > 2 ? "WHY DID YOU KEEP CLICKING" : "WORSE. AGAIN.";
+    quake();
+    grumble(1.8);
+    for (let index = 0; index < 10; index += 1) {
+      setTimeout(() => flashCat({
+        x: 5 + Math.random() * 90,
+        y: 8 + Math.random() * 84,
+        size: 150 + Math.random() * 330,
+        word: cameoWords[(index + rageCount) % cameoWords.length]
+      }), index * 85);
+    }
+    clearTimeout(rageTimer);
+    rageTimer = setTimeout(() => {
+      document.body.classList.remove("rage-mode");
+      $("#make-worse").textContent = "MAKE IT WORSE";
+    }, 6500);
   });
 
   const complaint = $("#complaint-form");
