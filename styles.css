@@ -375,10 +375,23 @@ body.quake main, body.quake #bg, body.quake #hud { animation: quake .5s linear b
 .splash-cat-cluster img:nth-child(2) { left: 27%; bottom: -1%; rotate: -3deg; }
 .splash-cat-cluster img:nth-child(3) { right: 25%; bottom: 0; rotate: 5deg; }
 .splash-cat-cluster img:nth-child(4) { right: 3%; rotate: 13deg; }
-.splash-card h1 { left: 3vw; bottom: 3%; z-index: 8; font-size: clamp(70px, 11vw, 165px); line-height: .68; }
+.splash-card > .splash-mega-cat {
+  left: auto;
+  right: -4vw;
+  top: 9%;
+  z-index: 6;
+  width: min(56vw, 920px);
+  height: 88%;
+  object-fit: contain;
+  object-position: right bottom;
+  translate: 0 0;
+  filter: drop-shadow(-15px 13px 0 var(--forest));
+}
+.splash-card h1 { left: 3vw; bottom: 8%; z-index: 8; max-width: 6ch; font-size: clamp(70px, 10vw, 158px); line-height: .72; }
 .splash-card .word-1 { right: 7%; top: 13%; }
 .splash-card .word-2 { right: 3%; top: 47%; }
 .splash-card .word-3 { right: 5%; top: 72%; font-size: clamp(28px, 4vw, 66px); }
+.splash-ui { z-index: 10; }
 .splash-ui .hot-btn { background: var(--yellow); min-width: 330px; }
 
 /* Two-section chaos edition */
@@ -538,7 +551,8 @@ body.rage-mode .chaos-card { box-shadow: 13px 13px 0 var(--ink); }
   .splash-cat-cluster img:nth-child(2) { left: 7%; bottom: 4%; }
   .splash-cat-cluster img:nth-child(3) { right: 5%; bottom: 4%; }
   .splash-cat-cluster img:nth-child(4) { right: -20%; }
-  .splash-card h1 { left: 4vw; bottom: 6%; z-index: 8; font-size: clamp(52px, 17vw, 82px); }
+  .splash-card > .splash-mega-cat { right: -20vw; top: 11%; width: 96vw; height: 78%; opacity: .96; }
+  .splash-card h1 { left: 4vw; bottom: 8%; z-index: 8; max-width: 5ch; font-size: clamp(52px, 17vw, 82px); }
   .splash-ui .hot-btn { min-width: 0; width: 100%; }
   #head h1 { font-size: clamp(150px, 51vw, 210px); }
   .hero-stamps { right: -3%; top: 21%; width: 48%; height: 50%; }
