@@ -405,6 +405,13 @@ body.quake main, body.quake #bg, body.quake #hud { animation: quake .5s linear b
 #head .lede { width: 45%; }
 .hero-x-link { display: inline-flex; width: fit-content; margin-top: 20px; padding: 11px 15px; border: 3px solid var(--ink); background: var(--yellow); color: var(--ink); box-shadow: 5px 5px 0 var(--ink); font-size: 11px; font-weight: 700; letter-spacing: .1em; text-decoration: none; }
 .hero-x-link:hover { background: var(--green); transform: translate(2px, 2px) rotate(-1deg); box-shadow: 3px 3px 0 var(--ink); }
+.token-bar { width: min(620px, 46%); margin-top: 17px; padding: 11px; border: 3px solid var(--ink); background: var(--white); box-shadow: 6px 6px 0 var(--green); }
+.token-label { display: inline-block; margin-bottom: 6px; padding: 3px 7px; background: var(--ink); color: var(--yellow); font-size: 10px; font-weight: 700; letter-spacing: .12em; }
+.token-bar code { display: block; color: var(--ink); font: 700 10px/1.35 var(--mono); overflow-wrap: anywhere; user-select: all; }
+.token-actions { display: flex; gap: 8px; margin-top: 10px; }
+.token-actions a { flex: 1 1 0; padding: 8px 10px; border: 2px solid var(--ink); background: var(--green); color: var(--ink); font-size: 9px; font-weight: 700; letter-spacing: .07em; text-align: center; text-decoration: none; }
+.token-actions a:last-child { background: var(--yellow); }
+.token-actions a:hover { background: var(--ink); color: var(--yellow); }
 
 #chaos {
   display: block;
@@ -555,6 +562,7 @@ body.rage-mode .chaos-card { box-shadow: 13px 13px 0 var(--ink); }
   .hero-cat-pack img { width: 50%; }
   .hero-cat-pack img:nth-child(2) { left: 25%; width: 55%; }
   #head .lede { width: 72%; }
+  .token-bar { width: 72%; }
   #chaos { padding: 10vh 5vw 7vh; overflow: hidden; }
   #chaos h2 { font-size: clamp(44px, 14vw, 66px); }
   .chaos-grid { grid-template-columns: 1fr; gap: 22px; }
