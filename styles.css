@@ -501,7 +501,9 @@ body.quake main, body.quake #bg, body.quake #hud { animation: quake .5s linear b
 .actions-card .ctas { margin: 20px 0 12px; }
 .actions-card .ctas .btn { flex: 1 1 0; }
 .actions-card .complaint { margin: 22px 0 5px; }
-.actions-card footer { margin-top: 24px; }
+.actions-card footer { display: flex; justify-content: space-between; align-items: center; gap: 18px; margin-top: 24px; }
+.x-link { display: inline-flex; padding: 9px 12px; border: 3px solid var(--ink); background: var(--green); color: var(--ink); box-shadow: 4px 4px 0 var(--ink); font-size: 10px; font-weight: 700; letter-spacing: .08em; white-space: nowrap; }
+.x-link:hover { background: var(--yellow); transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--ink); }
 
 body.rage-mode #bg { filter: saturate(2.3) contrast(1.2) hue-rotate(-24deg); }
 body.rage-mode #stripes { background: repeating-linear-gradient(95deg, transparent 0 30px, rgba(7,20,8,.24) 30px 48px); animation-duration: 1.2s; }
@@ -555,6 +557,7 @@ body.rage-mode .chaos-card { box-shadow: 13px 13px 0 var(--ink); }
   #chaos h2 { font-size: clamp(44px, 14vw, 66px); }
   .chaos-grid { grid-template-columns: 1fr; gap: 22px; }
   .chaos-card, .verdict-card, .actions-card { grid-column: 1; rotate: 0deg !important; }
+  .actions-card footer { align-items: flex-start; flex-direction: column; }
   .verdict-card .verdict-box { grid-template-columns: 1fr; }
   .verdict-card .verdict-face { max-height: 240px; }
   .alarm-card h3, .actions-card h3 { font-size: 34px; }
