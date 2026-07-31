@@ -403,6 +403,8 @@ body.quake main, body.quake #bg, body.quake #hud { animation: quake .5s linear b
 .hero-cat-pack img:nth-child(3) { right: -2%; rotate: 10deg; }
 #head > :not(.hero-cat-pack) { position: relative; z-index: 3; }
 #head .lede { width: 45%; }
+.hero-x-link { display: inline-flex; width: fit-content; margin-top: 20px; padding: 11px 15px; border: 3px solid var(--ink); background: var(--yellow); color: var(--ink); box-shadow: 5px 5px 0 var(--ink); font-size: 11px; font-weight: 700; letter-spacing: .1em; text-decoration: none; }
+.hero-x-link:hover { background: var(--green); transform: translate(2px, 2px) rotate(-1deg); box-shadow: 3px 3px 0 var(--ink); }
 
 #chaos {
   display: block;
