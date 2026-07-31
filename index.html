@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IT'S GRUMPY CAT — the scroll is the grudge</title>
+  <meta name="description" content="Grumpy Cat is judging the entire internet, one scroll at a time. Sound on. Joy off.">
+  <meta property="og:title" content="IT'S GRUMPY CAT — still unimpressed">
+  <meta property="og:description" content="The scroll is the grudge. It is exactly as long as Grumpy Cat's list of complaints.">
+  <meta property="og:image" content="assets/img/grumpy-cat-reference.png">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#ff2bd1">
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,400..900&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="preload" as="image" href="assets/img/grumpy-cat-reference.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="bg" aria-hidden="true">
+    <div id="sunburst"></div>
+    <div class="tunnel" id="tunnel-a"></div>
+    <div class="tunnel" id="tunnel-b"></div>
+    <div id="checker"></div>
+  </div>
+
+  <canvas id="aura" aria-hidden="true"></canvas>
+
+  <div id="grump" aria-hidden="true">
+    <div id="grump-head">
+      <span class="ghost cyan-ghost"></span>
+      <span class="ghost pink-ghost"></span>
+      <img src="assets/img/grumpy-cat-cutout.png" alt="" draggable="false">
+      <div class="head-fade"></div>
+    </div>
+    <div id="grump-torso"></div>
+    <div id="grump-tail"><img src="assets/img/grumpy-cat-cutout.png" alt="" loading="lazy" draggable="false"></div>
+  </div>
+
+  <div id="stickers" aria-hidden="true"></div>
+
+  <main>
+    <section id="head" class="panel" data-screen-label="THE FACE">
+      <p class="kicker">GRUMPY CAT · BORN ANNOYED · STAYED ANNOYED</p>
+      <h1 class="stretch">GRUUUUUUMPY</h1>
+      <p class="lede">The scroll is the grudge. This page is exactly as long as the cat's list of complaints, and the list is exactly as long as Monday. <strong>Start scrolling. Start apologizing.</strong></p>
+      <p class="cue">▼ the disappointment continues</p>
+    </section>
+
+    <section id="mood" class="panel" data-screen-label="THE MOOD">
+      <p class="kicker">01 · THE MOOD</p>
+      <h2>These feelings are real.<br>That's the joke.</h2>
+      <div class="mood-grid">
+        <div class="statblock mono">
+          <div class="row"><span>MOOD</span><b class="hot">NO</b></div>
+          <div class="row"><span>SMILE</span><b>none</b></div>
+          <div class="row"><span>TOLERANCE</span><b class="big">0%</b></div>
+          <div class="row"><span>EMPTY BOWL</span><b>unforgiven</b></div>
+          <div class="row"><span>MONDAY</span><b>every day</b></div>
+          <div class="row"><span>EXIT PLAN</span><b>already left</b></div>
+          <div class="row split-row"><span>EVERY HUMAN ACTION →</span><b><i class="pink">50% judged</i> · <i class="lime">25% ignored</i> · <i class="cyan">25% somehow worse</i></b></div>
+        </div>
+        <figure class="portrait" id="judge-card">
+          <div class="portrait-glow"></div>
+          <img src="assets/img/grumpy-cat-reference.png" alt="Grumpy Cat looking profoundly unimpressed" loading="lazy">
+          <span class="laser-eye laser-left"></span>
+          <span class="laser-eye laser-right"></span>
+          <figcaption class="mono">fig. 1 — the cat, reviewing your decisions</figcaption>
+        </figure>
+      </div>
+      <p class="body">The bowl was half empty. The nap was six minutes short. Somebody said “cheer up.” The face did not change. The face has never needed to change.</p>
+    </section>
+
+    <section id="gravity" class="panel wide" data-screen-label="GRUMPINESS IS GRAVITY">
+      <p class="kicker">02 · GRUMPINESS IS GRAVITY</p>
+      <h2>The mood line only goes down.</h2>
+      <div class="chartbox">
+        <div class="yaxis mono"><span>furious</span><span>irritated</span><span>annoyed</span><span>still no</span><span>no</span></div>
+        <div class="chartmedia">
+          <svg viewBox="0 0 1000 440" role="img" aria-label="A chart showing mood becoming increasingly grumpy">
+            <defs>
+              <linearGradient id="chart-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff2bd1" stop-opacity=".65"/><stop offset="1" stop-color="#ff5a00" stop-opacity="0"/></linearGradient>
+              <filter id="glow"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            </defs>
+            <g class="gridlines"><path d="M0 80H1000M0 170H1000M0 260H1000M0 350H1000"/><path d="M150 0V440M350 0V440M550 0V440M750 0V440M950 0V440"/></g>
+            <path class="area" d="M0 95 C120 80 150 140 235 122 S390 155 470 220 S635 190 710 292 S840 260 1000 390 L1000 440H0Z"/>
+            <path class="moodline" d="M0 95 C120 80 150 140 235 122 S390 155 470 220 S635 190 710 292 S840 260 1000 390"/>
+            <text x="775" y="360" class="chart-no">NO.</text>
+          </svg>
+          <div class="chart-cat"><img src="assets/img/grumpy-cat-cutout.png" alt="" loading="lazy"></div>
+        </div>
+        <div class="xaxis mono"><span>time →</span><span>(somehow worse)</span></div>
+      </div>
+      <p class="body">y-axis denominated in sighs, as is standard. The line only knows one direction because optimism has been removed for maintenance.</p>
+    </section>
+
+    <section id="howgrumpy" class="panel" data-screen-label="HOW GRUMPY">
+      <div id="mandala" aria-hidden="true"><span>NO</span><span>NO</span><span>NO</span><span>NO</span><span>NO</span><span>NO</span><span>NO</span><span>NO</span></div>
+      <p class="kicker">03 · HOW GRUMPY</p>
+      <h2>Live measurements.</h2>
+      <div class="units mono">
+        <div class="u"><span class="uv" id="u-px">0</span><span class="ul">pixels judged</span></div>
+        <div class="u"><span class="uv" id="u-sighs">0.00</span><span class="ul">sighs released</span></div>
+        <div class="u"><span class="uv" id="u-mondays">0.0</span><span class="ul">mondays survived</span></div>
+        <div class="u"><span class="uv" id="u-naps">0</span><span class="ul">naps interrupted</span></div>
+        <div class="u"><span class="uv pink" id="u-joy">100.0%</span><span class="ul">your remaining joy</span></div>
+      </div>
+      <figure class="meltbox">
+        <div class="rage-rings"></div>
+        <img src="assets/img/grumpy-cat-cutout.png" alt="Grumpy Cat surrounded by increasingly dramatic rage rings" loading="lazy">
+      </figure>
+      <p class="body">All numbers are live. None of them are good.</p>
+    </section>
+
+    <section id="blame" class="panel" data-screen-label="THE BLAME">
+      <svg id="streams" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="g-p" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff2bd1" stop-opacity="0"/><stop offset=".35" stop-color="#ff2bd1"/><stop offset="1" stop-color="#ff2bd1"/></linearGradient>
+          <linearGradient id="g-l" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b4ff39" stop-opacity="0"/><stop offset=".35" stop-color="#b4ff39"/><stop offset="1" stop-color="#b4ff39"/></linearGradient>
+          <linearGradient id="g-c" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#00f0ff" stop-opacity="0"/><stop offset=".35" stop-color="#00f0ff"/><stop offset="1" stop-color="#00f0ff"/></linearGradient>
+        </defs>
+        <path d="M66 8C45 14 30 16 12 24" stroke="url(#g-p)"/>
+        <path d="M66 22C45 32 32 42 12 52" stroke="url(#g-l)"/>
+        <path d="M66 36C46 52 34 68 12 80" stroke="url(#g-c)"/>
+      </svg>
+      <p class="kicker">04 · THE BLAME</p>
+      <h2>Where every complaint goes.</h2>
+      <div class="blamecards">
+        <div class="blame" style="--bc:#ff2bd1"><span class="bv mono">50%</span><b>MONDAY</b><p>It arrived again. Nobody stopped it. This is on all of us.</p></div>
+        <div class="blame" style="--bc:#b4ff39"><span class="bv mono">25%</span><b>THE EMPTY BOWL</b><p>You can see the bottom. Legally, that means empty.</p></div>
+        <div class="blame" style="--bc:#00f0ff"><span class="bv mono">25%</span><b>YOU</b><p>Nothing personal. Actually, no. Extremely personal.</p></div>
+      </div>
+    </section>
+
+    <section id="verdict" class="panel" data-screen-label="THE VERDICT">
+      <p class="kicker">05 · ASK GRUMPY</p>
+      <h2 id="verdict-title">Your question has already disappointed her.</h2>
+      <div class="verdict-box">
+        <div class="verdict-face"><img src="assets/img/grumpy-cat-reference.png" alt="Grumpy Cat's verdict" loading="lazy"></div>
+        <div class="verdict-copy">
+          <p class="mono verdict-label">OFFICIAL GRUMP-O-METER</p>
+          <p id="verdict-text">“I haven't heard it yet, but no.”</p>
+          <button type="button" id="ask" class="btn hot-btn">ASK ANYWAY</button>
+        </div>
+      </div>
+      <div class="statblock mono verdict-stats">
+        <div class="row"><span>STATUS</span><b class="lime">AWAKE. UNFORTUNATELY.</b></div>
+        <div class="row"><span>FAVORITE DAY</span><b>the one you leave</b></div>
+        <div class="row"><span>HAPPINESS DETECTED</span><b>0.000%</b></div>
+        <div class="row"><span>CURRENT THOUGHT</span><b id="thought">this website is too cheerful</b></div>
+      </div>
+      <p class="body">The answer updates whenever you press the button. The opinion does not.</p>
+    </section>
+
+    <section id="tail" class="panel" data-screen-label="THE END, APPARENTLY">
+      <p class="kicker">06 · TAIL</p>
+      <h2 class="stretch2">STAY GRUMPY.</h2>
+      <p class="final-line">You made it to the bottom. She wishes you hadn't.</p>
+      <div class="ctas">
+        <button type="button" id="pet" class="btn hot-btn">PET THE CAT</button>
+        <button type="button" id="complain" class="btn">FILE A COMPLAINT</button>
+        <a class="btn" href="https://www.youtube.com/watch?v=OAUtiqYDhEc" target="_blank" rel="noopener">HEAR THE FULL SONG</a>
+      </div>
+      <div id="complaint-form" class="complaint mono" hidden>
+        <label for="complaint-input">COMPLAINT</label>
+        <input id="complaint-input" type="text" placeholder="type something she will ignore">
+        <button type="button" id="submit-complaint">SUBMIT TO THE VOID</button>
+        <p id="complaint-result"></p>
+      </div>
+      <footer class="mono">
+        <p>A fan-made internet tribute. Grumpy Cat is a very famous cat and remains unimpressed by this page. Nothing here is advice. The cat is, however, extremely grumpy.</p>
+      </footer>
+    </section>
+
+    <div id="outro" aria-hidden="false"><p class="mono still">still disappointed</p></div>
+  </main>
+
+  <div id="ministats" class="mono" aria-hidden="true">
+    <div class="m"><span id="m-px">0</span><i>judged</i></div>
+    <div class="m"><span id="m-sighs">0.00</span><i>sighs</i></div>
+    <div class="m"><span id="m-mondays">0.0</span><i>mondays</i></div>
+    <div class="m"><span id="m-naps">0</span><i>naps</i></div>
+    <div class="m"><span class="pink" id="m-joy">100%</span><i>joy</i></div>
+  </div>
+
+  <div id="hud" class="mono">
+    <span id="hud-len">GRUDGE: 000000 px</span>
+    <button id="mute" type="button" aria-label="toggle sound">▶ SOUND</button>
+  </div>
+  <div id="scanlines" aria-hidden="true"></div>
+  <div id="trails" aria-hidden="true"></div>
+
+  <div id="splash">
+    <div class="splash-card" aria-hidden="true">
+      <span class="splash-word word-1">NO</span><span class="splash-word word-2">UGH</span><span class="splash-word word-3">WHY</span>
+      <div class="splash-ghost sg-cyan"></div><div class="splash-ghost sg-pink"></div>
+      <img src="assets/img/grumpy-cat-cutout.png" alt="Grumpy Cat">
+      <h1>IT'S<br>GRUMPY<br>CAT</h1>
+    </div>
+    <div class="splash-ui">
+      <button id="enter" type="button" class="btn hot-btn">▶ ENTER GRUMPY</button>
+      <p class="mono">sound on. the complaint is the point.</p>
+      <button id="enter-quiet" type="button" class="quiet mono">enter quietly</button>
+    </div>
+  </div>
+
+  <audio id="track" src="assets/audio/grumpy-theme.mp3" loop preload="none"></audio>
+  <script src="main.js"></script>
+</body>
+</html>
